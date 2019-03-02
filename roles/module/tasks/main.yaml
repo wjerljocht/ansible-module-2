@@ -1,0 +1,27 @@
+---
+#-   include_vars: 
+#        dir: vars
+# 
+-   debug:
+        var: data.param.drip
+-   debug:
+        var: username
+-   debug:
+        var: password
+
+-   eludom:
+        foo: bar
+        bar: '{{ data.param }}'
+    register: out
+
+-   debug:
+        var: out
+
+-   eludom:
+        foo: bar
+        bar: '{{ out }}'
+    register: out
+
+-   debug:
+        var: out
+#       msg: '{{ out }}'
